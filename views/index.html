@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "XSLT-compat">
+<html lang="en">
+<html>
+
+<head>
+    <!-- declaration viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- <meta name="description" content="">
+    <meta name="author" content=""> -->
+
+    <!-- bootstrap core and CSS -->
+    <link rel="stylesheet" type="text/css" href= "css/stylesheet.css"/>
+
+    <title>BUK'S SHOP</title>
+    <div id="header">
+    "Find what you love and let it kill you"
+    </div>
+</head>
+
+<body>
+    <div id="welcome">
+    WELCOME TO THE FIRST AND UNIQUE BOOKSTORE IN HONOUR OF CHARLES BUKOWSKI
+    <h6> _________________________________________________________________________</h6>    
+    </div>  
+
+    <!-- ghost button-->
+    <div class="button_cont">
+        <ul>
+        <li><button class="example_c" onclick="displayAll()">Display all titles</button></li>
+        <li> <button class="example_c" onclick="displayReleased()">RELEASED TITLES</button></li>
+        <li><button class="example_d" onclick="displaySales()">SALES</button></li>
+        <li><button class="example_c" onclick="loadXMLDocFaq()">F.A.Q</buttoon></li>
+        </ul>        
+    </div>
+
+    <div id="content">
+        <!-- content: create divs where you are going to add your xml content ????? -->
+        <table id="xmlContent"></table>
+    </div>
+    <h6>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</h6>
+    <!-- footer col-container with 03 sub containers-->     
+	<div class="footer-col-container">    
+  <div class="col-left">
+    <p><b>STAY CONNECTED</b></p>
+            <p>Join our newsletter to receive monthly marketing tips</p>
+            <form action="/action_page.php">
+               <input type="text" name="firstname" value=" Enter your email">
+               <input type="submit" value="SIGN UP">
+            </form>
+  </div>
+
+  <div class="col-center">
+    <p><b>FOLLOW US</b></p>
+                <a href="http://www.facebook.com"><img src="images/fb icon.png" alt= "Facebook" title="Facebook"></a>
+                <a href="http://www.instagram.com"><img src="images/insta icon.png" alt="Instagram" title="Instagram"></a>
+                <a href="http://twitter.com"><img src="images/twt icon.png" alt="Twitter" title="Twitter"></a>
+                      
+            <p><b>Copyright  IWAB © 2019 Created by Jennifer Magpantay ID 2017325</b></p>    
+  </div>
+
+  <div class="col-right">
+    <p><b>COME TO VISIT US</b></p>
+            <p><b>BUK's SHOP</b> . 00, Lorem ipsum dolor sit amet</p>
+            <p>+353 00 000.0000 . Dublin XX . IRL</p>
+  </div>
+</div>
+
+<!-- bootstrapt cor and Javascript -->
+
+<!-- script for the buttons action -->
+<script src="js/displayAll.js"></script>
+<script src="js/displayReleased.js"></script>
+<script src="js/displaySales.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/table.js"></script>
+</body>
+</html>
+
+
