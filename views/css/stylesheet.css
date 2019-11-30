@@ -27,6 +27,11 @@ body {
     /*top, right, bottom, left*/
 }
 
+body {
+    background-image: url('paper_texture_02.png');
+    
+}
+
 #header {
     font-family: 'momstypewriterregular';
 	font-size: 100px;
@@ -67,7 +72,7 @@ padding: 20px;
 border: 4px solid black!important;
 display: inline-block;
 transition: all 0.4s ease 0s;
-width: 23%;
+width: 18%;
 }
 
 .example_c:hover {
@@ -94,6 +99,49 @@ li {
     padding-top: 20px;
 }
 
+#newTitles{
+    display: none;
+}
+
+.form_container{
+    width: 96%;
+      
+}
+
+.form_container label {
+    width: 75%;
+    display: block;
+    line-height: 35px;
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    padding-right: 10px;
+    
+}
+
+.form_container span {
+    font-family: 'myLightFont';
+    font-size: 22px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.form_container .form_title {
+    font-size: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 80%;  
+    float: right;
+    border: none;
+	border-radius: 4px;	    
+}
+
+.form_container input[type=submit]{
+    font-family: 'myLightFont';
+    font-size: 22px;
+    color: white;
+    background: #2B2B2B;
+
+}
 table {
     font-size: 16px;
     border-collapse: collapse;
@@ -115,10 +163,6 @@ th {
 tr:hover {background-color:#f5f5f5;}
 /* adding css to the class footer and p related to the class */
 
-footer-col-container{
-    background: green;
-
-}
 
 .footer-col-container, .footer-col-container p {
     font-size: 12px;
@@ -138,11 +182,7 @@ footer-col-container{
     padding-left: 25px;
 }
 
-.col-center{
-    width: 33%;
-}
-
-.col-right {
+.col-center, .col-right{
     width: 33%;
 }
 

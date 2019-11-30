@@ -1,13 +1,13 @@
 //javascript for the table
 function draw_table(){
-    $("#results").empty();
+    $("#xmlContent").empty(); //selecting by query table id xmlContent
     $.getJSONuncached = function(url) {
         return $.ajax({
             url: url,
             type: 'GET',
             cache: false,
             success: function(html) {
-                $("#results").append(html);
+                $("#xmlContent").append(html); //adding html to the table id xmlContent
             }
         });
     };

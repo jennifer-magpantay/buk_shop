@@ -4,7 +4,8 @@ var http = require('http'),
     express = require('express'),
     fs = require('fs'),
     xmlParse = require('xslt-processor').xmlParse,
-    xsltProcess = require('xslt-processor').xsltProcess;
+    xsltProcess = require('xslt-processor').xsltProcess,
+    xml2js = require('xml2js'); //jason?
 
     //error: cannot find express - npm install express
     //error: cannot find xslt - npm install xslt-processor
@@ -19,9 +20,37 @@ var server = http.createServer(router);
 
 router.use(express.static(path.resolve(__dirname, 'views')));
 
-router.get('/', function(req, res){
+//adding new stuff
+router.use(express.urlencoded({extended: true}));
+router.use(express.json());
 
+// Function to read in XML file and convert it to JSON
+function xmlFileToJs(filename, cb) {
+  var filepath = path.normalize(path.join(__dirname, filename));
+  fs.readFile(filepath, 'utf8', function(err, xmlStr) {
+    if (err) throw (err);
+    xml2js.parseString(xmlStr, {}, cb);
+  });
+}
+
+//Function to convert JSON to XML and save it
+function jsToXmlFile(filename, obj, cb) {
+  var filepath = path.normalize(path.join(__dirname, filename));
+  var builder = new xml2js.Builder();
+  var xml = builder.buildObject(obj);
+  fs.writeFile(filepath, xml, cb);
+}
+
+router.get('/', function(req, res){
     res.render('index');
+})
+
+//function added by Mikhail
+router.get('/bookshop', function(req, res){
+
+    res.writeHead(200, {'Content-Type': 'text/xml'});
+    var xml = fs.readFileSync('bookshop.xml', 'utf8');
+    res.end(xml);
 
 })
 
@@ -38,6 +67,37 @@ router.get('/get/html', function(req, res) {
     var result = xsltProcess(doc, stylesheet);
 
     res.end(result.toString());
+
+});
+
+//adding more new stuff
+// POST request to add to JSON & XML files
+router.post('/post/json', function(req, res) {
+
+  // Function to read in a JSON file, add to it & convert to XML
+  function appendJSON(obj) {
+    console.log(obj);
+
+    // Function to read in XML file, convert it to JSON, add a new object and write back to XML file
+    xmlFileToJs('bookshop.xml', function(err, result) {
+      if (err) throw (err);
+      //I AM PRETTY SURE THE ERROR IS HERE!!!
+      //result.cafemenu.section[obj.sec_n].entree.push({'item': obj.item, 'price': obj.price});
+      //result.bookshop.book.push({'title': obj.title, 'year': obj.year, 'price': obj.price, 'category': obj.category});
+      result.BOOKSHOP.BOOK.push({'TITLE': obj.TITLE, 'YEAR': obj.YEAR, 'PRICE': obj.PRICE, 'CATEGORY': obj.CATEGORY});
+      //result.bookshop.push({'title': obj.title, 'year': obj.year, 'price': obj.price, 'category': obj.sec_n});
+      console.log(result);
+      jsToXmlFile('bookshop.xml', result, function(err) {
+        if (err) console.log(err);
+      })
+    })
+  }
+
+  // Call appendJSON function and pass in body of the current POST request
+  appendJSON(req.body);
+
+  // Re-direct the browser back to the page, where the POST request came from
+  res.redirect('back');
 
 });
 

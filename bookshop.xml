@@ -1,120 +1,129 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- adding the xsl file -->
-<?xml-stylesheet type="text/xsl" href="bookshop.xsl"?>
-<!-- <?xml-stylesheet type="text/xsl" href="bookshop.xslt"?> -->
-<BOOKSHOP>   
-    <BOOK>
-	     <TITLE>Notes of a Dirty Old Mand</TITLE>
-         <YEAR>1969</YEAR>
-         <PRICE>19.99</PRICE>
-         <CATEGORY>Chapbooks Collections</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>Erections, Ejaculations, Exhibitions, and General Tales of Ordinary Madness - Part I</TITLE>
-         <YEAR>1972</YEAR>
-         <PRICE>16.99</PRICE>
-         <CATEGORY>Chapbooks Collections</CATEGORY>
-    </BOOK>  
-    <BOOK>
-        <TITLE>Erections, Ejaculations, Exhibitions, and General Tales of Ordinary Madness - Part II</TITLE>
-         <YEAR>1973</YEAR>
-         <PRICE>16.99</PRICE>
-         <CATEGORY>Chapbooks Collections</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>South wiht No North</TITLE>
-         <YEAR>1980</YEAR>
-         <PRICE>19.99</PRICE>
-         <CATEGORY>Chapbooks Collections</CATEGORY>
-    </BOOK> 
-     <BOOK>
-        <TITLE>Hot Water Music</TITLE>
-         <YEAR>1983</YEAR>
-         <PRICE>16.99</PRICE>
-         <CATEGORY>Chapbooks Collections</CATEGORY>
-    </BOOK>
-    <BOOK>
-        <TITLE>Bring me your Love</TITLE>
-         <YEAR>1983</YEAR>
-         <PRICE>16.99</PRICE>
-         <CATEGORY>Chapbooks Collections</CATEGORY>
-    </BOOK>
-    <BOOK>
-        <TITLE>Flower, Fist, and Bestial Wail</TITLE>
-         <YEAR>1960</YEAR>
-         <PRICE>19.99</PRICE>
-         <CATEGORY>Poetry Collections</CATEGORY>
-    </BOOK>
-    <BOOK>
-        <TITLE>It Catches My Heart in Its Hands</TITLE>
-         <YEAR>1963</YEAR>
-         <PRICE>19.99</PRICE>
-         <CATEGORY>Poetry Collections</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>The Days Run Away Like Wild Horses Over the Hills</TITLE>
-         <YEAR>1969</YEAR>
-         <PRICE>19.99</PRICE>
-         <CATEGORY>Poetry Collections</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>Love Is a Dog from Hell</TITLE>
-         <YEAR>1977</YEAR>
-         <PRICE>19.99</PRICE>
-         <CATEGORY>Poetry Collections</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>You Get So Alone at Times That It Just Makes Sense</TITLE>
-         <YEAR>1986</YEAR>
-         <PRICE>16.99</PRICE>
-         <CATEGORY>Poetry Collections</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>On Cats</TITLE>
-         <YEAR>2016</YEAR>
-         <PRICE>14.99</PRICE>
-         <CATEGORY>Poetry Collections</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>On Love</TITLE>
-         <YEAR>2017</YEAR>
-         <PRICE>14.99</PRICE>
-         <CATEGORY>Poetry Collections</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>Post Office</TITLE>
-         <YEAR>1971</YEAR>
-         <PRICE>19.99</PRICE>
-         <CATEGORY>Novels</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>Factotum</TITLE>
-         <YEAR>1975</YEAR>
-         <PRICE>19.99</PRICE>
-         <CATEGORY>Novels</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>Women</TITLE>
-         <YEAR>1978</YEAR>
-         <PRICE>19.99</PRICE>
-         <CATEGORY>Novels</CATEGORY>
-    </BOOK> 
-     <BOOK>
-        <TITLE>Ham on Rye</TITLE>
-         <YEAR>1982</YEAR>
-         <PRICE>16.99</PRICE>
-         <CATEGORY>Novels</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>Hollywood</TITLE>
-         <YEAR>1989</YEAR>
-         <PRICE>16.99</PRICE>
-         <CATEGORY>Novels</CATEGORY>
-    </BOOK> 
-    <BOOK>
-        <TITLE>Pulp</TITLE>
-         <YEAR>1994</YEAR>
-         <PRICE>14.99</PRICE>
-         <CATEGORY>Novels</CATEGORY>
-    </BOOK> 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BOOKSHOP>
+  <BOOK>
+    <TITLE>Notes of a Dirty Old Mand</TITLE>
+    <YEAR>1969</YEAR>
+    <PRICE>19.99</PRICE>
+    <CATEGORY>Chapbooks Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Erections, Ejaculations, Exhibitions, and General Tales of Ordinary Madness - Part I</TITLE>
+    <YEAR>1972</YEAR>
+    <PRICE>16.99</PRICE>
+    <CATEGORY>Chapbooks Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Erections, Ejaculations, Exhibitions, and General Tales of Ordinary Madness - Part II</TITLE>
+    <YEAR>1973</YEAR>
+    <PRICE>16.99</PRICE>
+    <CATEGORY>Chapbooks Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>South wiht No North</TITLE>
+    <YEAR>1980</YEAR>
+    <PRICE>19.99</PRICE>
+    <CATEGORY>Chapbooks Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Hot Water Music</TITLE>
+    <YEAR>1983</YEAR>
+    <PRICE>16.99</PRICE>
+    <CATEGORY>Chapbooks Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Bring me your Love</TITLE>
+    <YEAR>1983</YEAR>
+    <PRICE>16.99</PRICE>
+    <CATEGORY>Chapbooks Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Flower, Fist, and Bestial Wail</TITLE>
+    <YEAR>1960</YEAR>
+    <PRICE>19.99</PRICE>
+    <CATEGORY>Poetry Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>It Catches My Heart in Its Hands</TITLE>
+    <YEAR>1963</YEAR>
+    <PRICE>19.99</PRICE>
+    <CATEGORY>Poetry Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>The Days Run Away Like Wild Horses Over the Hills</TITLE>
+    <YEAR>1969</YEAR>
+    <PRICE>19.99</PRICE>
+    <CATEGORY>Poetry Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Love Is a Dog from Hell</TITLE>
+    <YEAR>1977</YEAR>
+    <PRICE>19.99</PRICE>
+    <CATEGORY>Poetry Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>You Get So Alone at Times That It Just Makes Sense</TITLE>
+    <YEAR>1986</YEAR>
+    <PRICE>16.99</PRICE>
+    <CATEGORY>Poetry Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>On Cats</TITLE>
+    <YEAR>2016</YEAR>
+    <PRICE>14.99</PRICE>
+    <CATEGORY>Poetry Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>On Love</TITLE>
+    <YEAR>2017</YEAR>
+    <PRICE>14.99</PRICE>
+    <CATEGORY>Poetry Collections</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Post Office</TITLE>
+    <YEAR>1971</YEAR>
+    <PRICE>19.99</PRICE>
+    <CATEGORY>Novels</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Factotum</TITLE>
+    <YEAR>1975</YEAR>
+    <PRICE>19.99</PRICE>
+    <CATEGORY>Novels</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Women</TITLE>
+    <YEAR>1978</YEAR>
+    <PRICE>19.99</PRICE>
+    <CATEGORY>Novels</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Ham on Rye</TITLE>
+    <YEAR>1982</YEAR>
+    <PRICE>16.99</PRICE>
+    <CATEGORY>Novels</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Hollywood</TITLE>
+    <YEAR>1989</YEAR>
+    <PRICE>16.99</PRICE>
+    <CATEGORY>Novels</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Pulp</TITLE>
+    <YEAR>1994</YEAR>
+    <PRICE>14.99</PRICE>
+    <CATEGORY>Novels</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Lorem Ipsum</TITLE>
+    <YEAR>1998</YEAR>
+    <PRICE>19.99</PRICE>
+    <CATEGORY>Novels</CATEGORY>
+  </BOOK>
+  <BOOK>
+    <TITLE>Burning in Water, Drowning in Flame: Selected Poems 1955-1973 </TITLE>
+    <YEAR>1974</YEAR>
+    <PRICE>25.99</PRICE>
+    <CATEGORY>Poetry Collections</CATEGORY>
+  </BOOK>
 </BOOKSHOP>

@@ -3,42 +3,77 @@
 <html>
 
 <head>
-    <!-- declaration viewport -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!-- <meta name="description" content="">
-    <meta name="author" content=""> -->
+	<!-- declaration viewport -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- bootstrap core and CSS -->
-    <link rel="stylesheet" type="text/css" href= "css/stylesheet.css"/>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 
-    <title>BUK'S SHOP</title>
-    <div id="header">
-    "Find what you love and let it kill you"
-    </div>
+	<title>BUK'S SHOP</title>
+	<div id="header">
+		"Find what you love and let it kill you"
+	</div>
 </head>
 
 <body>
-    <div id="welcome">
-    WELCOME TO THE FIRST AND UNIQUE BOOKSTORE IN HONOUR OF CHARLES BUKOWSKI
-    <h6> _________________________________________________________________________</h6>    
-    </div>  
 
-    <!-- ghost button-->
-    <div class="button_cont">
-        <ul>
-        <li><button class="example_c" onclick="displayAll()">Display all titles</button></li>
-        <li> <button class="example_c" onclick="displayReleased()">RELEASED TITLES</button></li>
-        <li><button class="example_d" onclick="displaySales()">SALES</button></li>
-        <li><button class="example_c" onclick="loadXMLDocFaq()">F.A.Q</buttoon></li>
+	<div id="welcome">
+		WELCOME TO THE FIRST AND UNIQUE BOOKSTORE IN HONOUR OF CHARLES BUKOWSKI
+		<h6> _________________________________________________________________________</h6>
+	</div>
+
+	<!-- ghost button-->
+	<div class="button_cont">
+		<ul>
+			<li><button class="example_c" onclick="displayAll()">Display all titles</button></li>
+			<li> <button class="example_c" onclick="displayReleased()">RELEASED TITLES</button></li>
+			<li><button class="example_d" onclick="displaySales()">SALES</button></li>
+			<li><button class="example_c" onclick="adding()">ADD NEW TITLES</buttoon></li>
+            <li><button class="example_c" onclick="removing()">REMOVE TITTLE</buttoon></li>
         </ul>        
     </div>
 
     <div id="content">
         <!-- content: create divs where you are going to add your xml content ????? -->
-        <table id="xmlContent"></table>
+        <table id="xmlContent"></table>    
+
+        <!-- create a tableless form to add new titles that will be display by js function-->
+        
+            <div class="form_container">
+            <form id="newTitles" enctype="application/json"  action="/post/json" method="post">
+                <!-- <form id="newTitles"> -->
+                <label>
+                     <span>Title</span>
+                     <input type="text" class="form_title" name="TITLE">
+                </label>
+                <label>
+                    <span>Year of Release</span>
+                    <input type="text" class="form_title" name="YEAR">
+                </label>
+                <label>
+                    <span>Price</span>
+                    <input type="text" class="form_title" name="PRICE">
+                </label>
+                <label>
+                    <span>Category</span>
+                    <input list="category" class="form_title" name="CATEGORY">
+                         <datalist id="category" name="sec_n"> 
+                         <!-- <datalist id="category"> -->
+                            <option value="Chapbox Collections">
+                            <option value="Poetry Collections">
+                            <option value="Novels">                            
+                        </datalist>
+                </label>
+                <label>
+                     <!-- <input type="submit" class="form_title" onclick="myFunctionAdd()" value="ADD TITLE"> -->
+                     <input type="submit" class="form_title" value="ADD TITLE">
+                </label>               
+                </form>
+            </div>
     </div>
     <h6>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</h6>
     <!-- footer col-container with 03 sub containers-->     
@@ -46,7 +81,7 @@
   <div class="col-left">
     <p><b>STAY CONNECTED</b></p>
             <p>Join our newsletter to receive monthly marketing tips</p>
-            <form action="/action_page.php">
+            <form>
                <input type="text" name="firstname" value=" Enter your email">
                <input type="submit" value="SIGN UP">
             </form>
@@ -57,8 +92,8 @@
                 <a href="http://www.facebook.com"><img src="images/fb icon.png" alt= "Facebook" title="Facebook"></a>
                 <a href="http://www.instagram.com"><img src="images/insta icon.png" alt="Instagram" title="Instagram"></a>
                 <a href="http://twitter.com"><img src="images/twt icon.png" alt="Twitter" title="Twitter"></a>
-                      
-            <p><b>Copyright  IWAB © 2019 Created by Jennifer Magpantay ID 2017325</b></p>    
+               <br><br>       
+            <span><b>Copyright  IWAB © 2019 Created by Jennifer Magpantay ID 2017325</b></span>   
   </div>
 
   <div class="col-right">
@@ -71,12 +106,13 @@
 <!-- bootstrapt cor and Javascript -->
 
 <!-- script for the buttons action -->
+<script src="js/adding.js"></script>
+<!-- <script src="js/myFunctionAdd.js"></script> -->
+<script src="js/removing.js"></script>
 <script src="js/displayAll.js"></script>
 <script src="js/displayReleased.js"></script>
 <script src="js/displaySales.js"></script>
 <script src="js/jquery.min.js"></script>
-<script src="js/table.js"></script>
+<!-- <script src="js/table.js"></script> -->
 </body>
 </html>
-
-

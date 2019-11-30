@@ -13,10 +13,11 @@ function displayAll() {
     }
     };
   // xmlhttp.open("GET", "docname.xml", true);
-  xmlhttp.open("GET", "bookshop.xml", true);
+  xmlhttp.open("GET", "bookshop", true);
   xmlhttp.send();
 }
 
+//my new function where my xml will be read
 //my new function where my xml will be read
 function myFunction(xml) {
   var i;
