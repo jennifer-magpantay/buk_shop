@@ -11,29 +11,43 @@
     <meta name="author" content="">
 
 	<!-- CSS -->
+    <!-- font: Mom's Typewriter by Christoph Mueller -->
+    <!-- source: https://www.dafont.com/moms-typewriter.font and http://users.cuci.nl/nonsuch/free.htm-->
+    <!-- font: Bebas Neue Book by Ryoichi Tsunekawa -->
+    <!-- source: https://www.dafontfree.net/freefonts-bebas-neue-f23175.htm -->
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 
 	<title>BUK'S SHOP</title>
-	<div id="header">
-		"Find what you love and let it kill you"
-	</div>
+
+    <!-- responsive header from w3school -->
+
+    <div id="header">
+        <div id="header-right">
+        <a href="#home">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        </div>
+        <div id="logo">"Find what you love and let it kill you""</div> 
+    </div>
+	
 </head>
 
 <body>
 
 	<div id="welcome">
 		WELCOME TO THE FIRST AND UNIQUE BOOKSTORE IN HONOUR OF CHARLES BUKOWSKI
-		<h6> _________________________________________________________________________</h6>
+		 <hr class="dashed_line">
 	</div>
 
-	<!-- ghost button-->
+	<!-- Ghost Buttons with CSS3 created by @mithicher -->
+    <!-- https://codepen.io/mithicher/pen/acyfq -->
 	<div class="button_cont">
 		<ul>
-			<li><button class="example_c" onclick="displayAll()">Display all titles</button></li>
-			<li> <button class="example_c" onclick="displayReleased()">RELEASED TITLES</button></li>
-			<li><button class="example_d" onclick="displaySales()">SALES</button></li>
-			<li><button class="example_c" onclick="adding()">ADD NEW TITLES</buttoon></li>
-            <li><button class="example_c" onclick="removing()">REMOVE TITTLE</buttoon></li>
+			<li><button class="books" onclick="displayAll()">Display all titles</button></li>
+			<li> <button class="books" onclick="displayReleased()">RELEASED TITLES</button></li>
+			<li><button class="sales" onclick="displaySales()">SALES</button></li>
+			<li><button class="books" onclick="adding()">ADD NEW TITLES</buttoon></li>
+            <li><button class="books" onclick="removing()">REMOVE TITTLE</buttoon></li>
         </ul>        
     </div>
 
@@ -74,16 +88,18 @@
                 </label>               
                 </form>
             </div>
-    </div>
-    <h6>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</h6>
+        <br>
+    </div>  
+    <hr class="dotted_line">
+    <br>    
     <!-- footer col-container with 03 sub containers-->     
 	<div class="footer-col-container">    
   <div class="col-left">
     <p><b>STAY CONNECTED</b></p>
             <p>Join our newsletter to receive monthly marketing tips</p>
-            <form>
-               <input type="text" name="firstname" value=" Enter your email">
-               <input type="submit" value="SIGN UP">
+            <form class="footer">
+               <input type="text" value=" Enter your email">
+               <input type="submit" value="Sing Up">
             </form>
   </div>
 
@@ -99,7 +115,7 @@
   <div class="col-right">
     <p><b>COME TO VISIT US</b></p>
             <p><b>BUK's SHOP</b> . 00, Lorem ipsum dolor sit amet</p>
-            <p>+353 00 000.0000 . Dublin XX . IRL</p>
+            <p>Dublin XX . IRL . +353 00 000.0000</p>
   </div>
 </div>
 

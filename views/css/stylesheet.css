@@ -17,72 +17,94 @@
     src: url(BebasNeue-Book.ttf);    
 }
 
-html {
-	background-color: white;
+html {	
     font-family: Helvetica;	
 }
 
 body {
-	padding: 20px 0px 10px 20px;
-    /*top, right, bottom, left*/
-}
-
-body {
+    padding: 20px 0px 10px 20px; /*top, right, bottom, left*/
     background-image: url('paper_texture_02.png');
-    
 }
 
-#header {
+#header {    
+    overflow: hidden;   
+}
+
+#header a {
+  color: black;
+  text-align: center;
+  text-decoration: none;  
+  padding-right: 30px;
+  font-size: 20px;
+}
+
+#header #logo {
     font-family: 'momstypewriterregular';
-	font-size: 100px;
+	font-size: 6vw;
 	text-align: center;
+    padding-left: 20px;   
+    padding-top: 50px; 
+    line-height: auto;    
+}
+
+#logo img{
+    width: 100%;
+}
+
+#header-right, #header a {
+    font-size: 1.5vw;
+    font-family: 'myLightFont';
+    float: right;  
 }
 
 #welcome {
     font-family: 'myLightFont';
-    font-size: 35px;
+    font-size: 3vw;
     text-align:center;
     padding-top: 25px;
 }
 
-h6 {
-    font-family: 'momstypewriterregular';
-	font-size: 18px;
-    text-align: center;
-    padding: 0;
+hr.dashed_line{
+    border-top: 3px dashed black;
+    border-bottom:0;
+    width: 90%;
 }
 
-h3 {
-	font-size: 20px;
+hr.dotted_line{
+    border-top: 5px dotted black;
+    border-bottom:0;
+    width: 90%;
 }
 
 .button_cont{
     padding-left: 25px;
+    overflow: hidden;
 }
 
-.example_c, .example_d {
+.books, .sales {
 font-family: 'myLightFont';
-font-size: 20px;
+font-size: 1.5vw;
 color: black !important;
 text-transform: uppercase;
 text-decoration: none;
 text-align: center;
 background: #ffffff;
 padding: 20px;
-border: 4px solid black!important;
+border: 4px solid #2B2B2B !important;
 display: inline-block;
 transition: all 0.4s ease 0s;
 width: 18%;
+height: auto;
 }
 
-.example_c:hover {
+.books:hover {
 color: #ffffff !important;
-background: black ;
-border-color:black !important;
+background: #2B2B2B ;
+border-color:#2B2B2B !important;
 transition: all 0.4s ease 0s;
 }
 
-.example_d:hover {
+.sales:hover {
 color: #ffffff !important;
 background: red ;
 border-color:red !important;
@@ -104,8 +126,8 @@ li {
 }
 
 .form_container{
-    width: 96%;
-      
+    width: 96%;    
+    padding-bottom: 20px;  
 }
 
 .form_container label {
@@ -120,13 +142,13 @@ li {
 
 .form_container span {
     font-family: 'myLightFont';
-    font-size: 22px;
+    font-size: 1.5vw;
     padding-left: 10px;
     padding-right: 20px;
 }
 
 .form_container .form_title {
-    font-size: 16px;
+    font-size: 1.5vw;
     padding-top: 6px;
     padding-bottom: 6px;
     width: 80%;  
@@ -137,13 +159,13 @@ li {
 
 .form_container input[type=submit]{
     font-family: 'myLightFont';
-    font-size: 22px;
+    font-size: 1.5vw;
     color: white;
     background: #2B2B2B;
 
 }
 table {
-    font-size: 16px;
+    font-size: 1vw;
     border-collapse: collapse;
     width: 97%; 
 }
@@ -161,11 +183,10 @@ th {
 }
 
 tr:hover {background-color:#f5f5f5;}
+
 /* adding css to the class footer and p related to the class */
-
-
 .footer-col-container, .footer-col-container p {
-    font-size: 12px;
+    font-size: 0.8vw;
     color: white;
     display: table;
     width: 100%;
@@ -177,7 +198,7 @@ tr:hover {background-color:#f5f5f5;}
   background: #2B2B2B;
 }
 
-.col-left{
+.col-left {
     width: 34%;
     padding-left: 25px;
 }
@@ -186,22 +207,100 @@ tr:hover {background-color:#f5f5f5;}
     width: 33%;
 }
 
-input[type=text]{
-	line-height: 22px;
-    width: 50%;
+.footer input[type=text]{
+    width: 80%;
 	border: none;
 	border-radius: 4px;	
+    box-sizing: border-box;
+    resize: vertical;
+    align-content: left;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: #2B2B2B;
+   
 }
 
-input[type=submit]{
-	line-height: 22px;
+.footer input[type=submit]{   
 	width: 15%;
 	border: none;
 	border-radius: 4px;	
 	color: grey;
+    cursor: pointer;
+    align-content: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    float: right;    
 }
 
 img {
 	width: 6%;	
+    height: auto;
     padding-left: 20px;
+}
+
+/*when screen get smaller, then resize*/
+@media screen and (max-width: 500px) {
+
+/*header*/
+  #header a {    
+    float: none;
+    display: inline ;
+    text-align: center;    
+    font-size: 3vw;
+  } 
+
+  #header #logo {
+   font-size: 8vw;
+    padding-left: 0;       
+}
+
+  #welcome {
+      font-size: 4.5vw;
+      padding-bottom: 0;
+  }
+
+  /*buttons*/
+  .books, .sales {
+      font-size: 3.5vw;
+      padding: 10px;
+      margin-left: 35px;
+      width: 50%;
+      display: block;
+  }
+
+  #xmlContent{
+    font-size: 3vw;     
+}
+
+#content{
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+  /*footer*/
+  .footer-col-container, .footer-col-container p {
+    font-size: 2.5vw;
+    display: block;
+    width: 50%;    
+}
+
+.form_container span, .form_container input[type=submit] {
+    font-size: 2vw;
+    display: block;    
+}
+
+.footer-col-container{
+    width: 100%;
+   
+}
+
+.col-left, .col-center, .col-right {
+  display: block;
+  width: 100%;
+  padding-left: 10px;
+    
+}
+
+
+
 }
