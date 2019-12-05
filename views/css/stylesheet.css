@@ -317,6 +317,13 @@ img {
     
 }
 
-
-
+.selected{
+    background-color: #dc3545;
+    color: #FFF;
 }
+
+
+
+
+
+

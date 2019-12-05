@@ -7,6 +7,8 @@ var http = require('http'),
     xsltProcess = require('xslt-processor').xsltProcess,
     xml2js = require('xml2js'); //jason?
 
+const expAutoSan = require('express-autosanitizer');
+
     //error: cannot find express - npm install express
     //error: cannot find xslt - npm install xslt-processor
     //install xmlejs - npm install xml2js
@@ -112,7 +114,7 @@ router.post('/post/delete', function(req, res) {
     xmlFileToJs('bookshop.xml', function(err, result) {
       if (err) throw (err);
       //This is where we delete the object based on the position of the section and position of the entree, as being passed on from index.html
-      delete result.BOOKSHOP.BOOK[obj.BOOK].TITLE[obj.TITLE].YEAR[obj.YEAR].PRICE[obj.PRICE].CATEGORY[obj.CATEGORY];
+      delete result.BOOKSHOP.BOOK[obj.BOOK];
       //delete result.cafemenu.section[obj.section].entree[obj.entree];
       //delete result.XMLDOCNAME.CHILD...
 

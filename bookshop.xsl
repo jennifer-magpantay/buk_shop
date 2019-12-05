@@ -4,7 +4,10 @@
     <xsl:template match="/">
                 <!-- create a table to insert those xl element -->
                 <table id="bookshoptable" >  
-                    <thead>                 
+                    <thead> 
+                        <tr>
+                            <th colspan="4"></th>
+                        </tr>                
                     <tr>
                         <!-- first line/head of the table, total of 04 columns -->                       
                         <th>Title</th>
@@ -19,9 +22,10 @@
                     <!-- keep same lower/uppercase of xml -->
                     <xsl:for-each select="BOOKSHOP/BOOK">
                         <!-- adding changes to select and delete rows -->
-                        <tr>
-                            <td colspan="4">
-                                <xsl:value-f select="@TITLE" />
+                        
+                    <tr id="{position()}">
+                                 <td colspan="4">
+                                <xsl:value-f select="@BOOK" />
                             </td>
                         </tr>
                         <!-- ending of those changes -->

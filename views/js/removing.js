@@ -12,8 +12,7 @@ function removing(){
     }
 
      // Call function to display the list 
-    displayAll();
-    removing();
+    displayAll();   
 }
    
 

@@ -7,61 +7,40 @@ function draw_table(){
             type: 'GET',
             cache: false,
             success: function(html) {
-                $("#xmlContent").append(html); //adding html to the table id xmlContent
+                $("#xmlContent").append(html);
+                select_row(); //adding html to the table id xmlContent
             }
         });
     };
     $.getJSONuncached("/get/html")
-}
-$(document).ready(function(){
-    draw_table();
-})
-
-//adding code given by Mikhail to select row and delete it
-function draw_table()
-{
-	$("#xmlContent").empty();
-	$.getJSONuncached = function (url)
-	{
-		return $.ajax(
-		{
-			url: url,
-			type: 'GET',
-			cache: false,
-			success: function (html)
-			{
-				$("#xmlContent").append(html);
-				select_row();
-			}
-		});
-	};
-	$.getJSONuncached("/get/html")
 };
 
+//adding code given by Mikhail to select row and delete it
 function select_row()
 {
 	$("#bookshoptable tbody tr[id]").click(function ()//
 	{
-		$(".selected").removeClass("selected");
+		//$(".selected").removeClass("selected");//where is that selected class???
+        //$(this).addClass("selected");
+        $(".selected").removeClass("selected");//it is on CSS file
 		$(this).addClass("selected");
-		var section = $(this).prevAll("tr").children("td[colspan='4']").length - 1;
-		var entree = $(this).attr("id") - 1;
-		delete_row(section, entree);
+        var BOOK = $(this).prevAll("tr").children("td[colspan='4']").length - 1;
+        console.log(BOOK);
+		//var XX = $(this).attr("id") - 1;
+		delete_row(BOOK);
 	})
 };
 
-function delete_row(sec, ent)
+function delete_row(BOOK)
 {
-	$("#delete").click(function ()
-	{
+	$("#delete").click(function () {
 		$.ajax(
 		{
 			url: "/post/delete",
 			type: "POST",
 			data:
 			{
-				section: sec,
-				entree: ent
+				BOOK: BOOK
 			},
 			cache: false,
 			success: setTimeout(draw_table, 1000)
