@@ -9,6 +9,7 @@ var http = require('http'),
 
     //error: cannot find express - npm install express
     //error: cannot find xslt - npm install xslt-processor
+    //install xmlejs - npm install xml2js
 
 //adding variables for the router
 /*A Javascript router is a key component in most frontend frameworks. It is the piece of software in charge to 
@@ -20,7 +21,7 @@ var server = http.createServer(router);
 
 router.use(express.static(path.resolve(__dirname, 'views')));
 
-//adding new stuff
+//adding new stuff given by Mikhail
 router.use(express.urlencoded({extended: true}));
 router.use(express.json());
 
@@ -43,7 +44,7 @@ function jsToXmlFile(filename, obj, cb) {
 
 router.get('/', function(req, res){
     res.render('index');
-})
+}); //
 
 //function added by Mikhail
 router.get('/bookshop', function(req, res){
@@ -52,7 +53,7 @@ router.get('/bookshop', function(req, res){
     var xml = fs.readFileSync('bookshop.xml', 'utf8');
     res.end(xml);
 
-})
+});//
 
 router.get('/get/html', function(req, res) {
 
@@ -70,7 +71,7 @@ router.get('/get/html', function(req, res) {
 
 });
 
-//adding more new stuff
+//adding more new stuff given by Mikhail
 // POST request to add to JSON & XML files
 router.post('/post/json', function(req, res) {
 
@@ -91,7 +92,7 @@ router.post('/post/json', function(req, res) {
         if (err) console.log(err);
       })
     })
-  }
+  }; //
 
   // Call appendJSON function and pass in body of the current POST request
   appendJSON(req.body);
@@ -100,6 +101,33 @@ router.post('/post/json', function(req, res) {
   res.redirect('back');
 
 });
+
+//adding deleting function give by Mikhail
+// POST request to add to JSON & XML files
+router.post('/post/delete', function(req, res) {
+
+  // Function to read in a JSON file, add to it & convert to XML
+  function deleteJSON(obj) {
+    // Function to read in XML file, convert it to JSON, delete the required object and write back to XML file
+    xmlFileToJs('bookshop.xml', function(err, result) {
+      if (err) throw (err);
+      //This is where we delete the object based on the position of the section and position of the entree, as being passed on from index.html
+      delete result.BOOKSHOP.BOOK[obj.BOOK].TITLE[obj.TITLE].YEAR[obj.YEAR].PRICE[obj.PRICE].CATEGORY[obj.CATEGORY];
+      //delete result.cafemenu.section[obj.section].entree[obj.entree];
+      //delete result.XMLDOCNAME.CHILD...
+
+      //This is where we convert from JSON and write back our XML file
+      jsToXmlFile('bookshop.xml', result, function(err) {
+        if (err) console.log(err);
+      })
+    })
+  }
+
+  // Call appendJSON function and pass in body of the current POST request
+  deleteJSON(req.body);
+
+});
+
 
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
   var addr = server.address();

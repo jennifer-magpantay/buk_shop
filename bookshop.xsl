@@ -3,7 +3,8 @@
 <xsl:output method="html" doctype-public="XSLT-compat" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
     <xsl:template match="/">
                 <!-- create a table to insert those xl element -->
-                <table>                   
+                <table id="bookshoptable" >  
+                    <thead>                 
                     <tr>
                         <!-- first line/head of the table, total of 04 columns -->                       
                         <th>Title</th>
@@ -11,16 +12,27 @@
                         <th>Price</th>
                          <th>Category</th>
                     </tr>
+                    </thead>
+
+                    <tbody>
                     <!-- insert the loop to read all categories of books and then titles, year and price -->
                     <!-- keep same lower/uppercase of xml -->
                     <xsl:for-each select="BOOKSHOP/BOOK">
+                        <!-- adding changes to select and delete rows -->
+                        <tr>
+                            <td colspan="4">
+                                <xsl:value-f select="@TITLE" />
+                            </td>
+                        </tr>
+                        <!-- ending of those changes -->
                         <tr>
                             <td><xsl:value-of select="TITLE" /></td>
                              <td><xsl:value-of select="YEAR" /></td>
                             <td><xsl:value-of select="PRICE" /></td>
                             <td><xsl:value-of select="CATEGORY" /></td>
                         </tr>
-                    </xsl:for-each>          
+                    </xsl:for-each>      
+                </tbody>    
                 </table>
         </xsl:template>
 

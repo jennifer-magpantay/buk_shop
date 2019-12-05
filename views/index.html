@@ -47,7 +47,7 @@
 			<li> <button class="books" onclick="displayReleased()">RELEASED TITLES</button></li>
 			<li><button class="sales" onclick="displaySales()">SALES</button></li>
 			<li><button class="books" onclick="adding()">ADD NEW TITLES</buttoon></li>
-            <li><button class="books" onclick="removing()">REMOVE TITTLE</buttoon></li>
+            <li><button class="books" onclick="removing();displayAll();">REMOVE TITTLE</buttoon></li>
         </ul>        
     </div>
 
@@ -55,8 +55,7 @@
         <!-- content: create divs where you are going to add your xml content ????? -->
         <table id="xmlContent"></table>    
 
-        <!-- create a tableless form to add new titles that will be display by js function-->
-        
+        <!-- create a tableless form to add new titles that will be display by js function-->        
             <div class="form_container">
             <form id="newTitles" enctype="application/json"  action="/post/json" method="post">
                 <!-- <form id="newTitles"> -->
@@ -87,6 +86,11 @@
                      <input type="submit" class="form_title" value="ADD TITLE">
                 </label>               
                 </form>
+            </div>
+            <!-- to delete item from the list -->
+            <div id="delete_container">
+                <p class="text-muted">To delete a title from the list, please, click on the required row first</p>
+                    <button id="delete" class="btn btn-block btn-danger">DELETE TITLE</button>
             </div>
         <br>
     </div>  

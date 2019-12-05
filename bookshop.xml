@@ -126,4 +126,10 @@
     <PRICE>25.99</PRICE>
     <CATEGORY>Poetry Collections</CATEGORY>
   </BOOK>
+  <BOOK>
+    <TITLE>The Last Nigh of The Earth Poems</TITLE>
+    <YEAR>1992</YEAR>
+    <PRICE>12.99</PRICE>
+    <CATEGORY>Poetry Collections</CATEGORY>
+  </BOOK>
 </BOOKSHOP>

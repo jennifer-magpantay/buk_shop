@@ -1,8 +1,8 @@
 
 function displayAll() {
-    var text = "Complete list of all available titles" 
-    var content = window.document.getElementById('xmlContent')
-    content.innerHTML= text;  
+    //var text = "Complete list of all available titles" 
+    //var content = window.document.getElementById('xmlContent')
+    //content.innerHTML= text;  
     //onclick function is working but it is not loading the xml doc!!
 
     //load the xml file
